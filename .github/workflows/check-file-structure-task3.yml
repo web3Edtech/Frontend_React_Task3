@@ -15,7 +15,7 @@ jobs:
 
       - name: Check required files
         run: |
-          REQUIRED_FILES=("public" "src/components/HoverInfo.jsx" "src/components/Profile.jsx" "src/components/ProfileItem.jsx" "src/components/ProfileList.jsx" "src/components/SearchBar.jsx" "src/components/UserrProfile.jsx" "src/components/WelcomeBanner.jsx" "src/components/withLogger.jsx" "src/contexts/UserContext.jsx" "src/hooks/useFetch.jsx" "App.js" "App.css")
+          REQUIRED_FILES=("public" "profile-website/src/components/HoverInfo.jsx" "profile-website/src/components/Profile.jsx" "profile-website/src/components/ProfileItem.jsx" "profile-website/src/components/ProfileList.jsx" "profile-website/src/components/SearchBar.jsx" "profile-website/src/components/UserrProfile.jsx" "profile-website/src/components/WelcomeBanner.jsx" "profile-website/src/components/withLogger.jsx" "profile-website/src/contexts/UserContext.jsx" "profile-website/src/hooks/useFetch.jsx" "profile-website/App.js" "profile-website/App.css")
           for file in "${REQUIRED_FILES[@]}"; do
             if [ ! -f "$file" ]; then
               echo "$file is missing!"
