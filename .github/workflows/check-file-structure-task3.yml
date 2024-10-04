@@ -1,0 +1,24 @@
+name: Check Frontend_React_Task3 File Structure
+
+# Triggers the action only on a direct commit push (no pull request)
+on:
+  push:
+    branches:
+      - '**'  # Runs the action on commit pushed to any branch
+
+jobs:
+  check-task3-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check required files
+        run: |
+          REQUIRED_FILES=("public" "src/components/HoverInfo.jsx" "src/components/Profile.jsx" "src/components/ProfileItem.jsx" "src/components/ProfileList.jsx" "src/components/SearchBar.jsx" "src/components/UserrProfile.jsx" "src/components/WelcomeBanner.jsx" "src/components/withLogger.jsx" "src/contexts/UserContext.jsx" "src/hooks/useFetch.jsx" "App.js" "App.css")
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "$file is missing!"
+              exit 1
+            fi
+          done
