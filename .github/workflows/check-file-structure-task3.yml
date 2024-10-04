@@ -15,7 +15,7 @@ jobs:
 
       - name: Check required files
         run: |
-          REQUIRED_FILES=("profile-website/src/components/HoverInfo.jsx" "profile-website/src/components/Profile.jsx" "profile-website/src/components/ProfileItem.jsx" "profile-website/src/components/ProfileList.jsx" "profile-website/src/components/SearchBar.jsx" "profile-website/src/components/UserrProfile.jsx" "profile-website/src/components/WelcomeBanner.jsx" "profile-website/src/components/withLogger.jsx" "profile-website/src/contexts/UserContext.jsx" "profile-website/src/hooks/useFetch.jsx" "profile-website/App.js" "profile-website/App.css")
+          REQUIRED_FILES=("profile-website/src/components/HoverInfo.jsx" "profile-website/src/components/Profile.jsx" "profile-website/src/components/ProfileItem.jsx" "profile-website/src/components/ProfileList.jsx" "profile-website/src/components/SearchBar.jsx" "profile-website/src/components/UserrProfile.jsx" "profile-website/src/components/WelcomeBanner.jsx" "profile-website/src/components/withLogger.jsx" "profile-website/src/contexts/UserContext.jsx" "profile-website/src/hooks/useFetch.jsx" "profile-website/src/App.js" "profile-website/src/App.css")
           for file in "${REQUIRED_FILES[@]}"; do
             if [ ! -f "$file" ]; then
               echo "$file is missing!"
