@@ -22,7 +22,7 @@ jobs:
       # Step 3: Clone Task 2 repository using authenticated URL
       - name: Clone Task 2 repository
         run: |
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/web3Edtech/Frontend_React_Task2-${{ github.actor }}.git task2
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Web3onwardsEdtech/react-task-2-tester-advanced-react-rendering-techniques-${{ github.actor }}.git task2
           cp -r task2/profile-website/src/components/* profile-website/src/components/
 
       # Step 4: Add additional files from Task 3 template
