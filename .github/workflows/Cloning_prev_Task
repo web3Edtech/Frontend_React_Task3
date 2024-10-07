@@ -1,0 +1,34 @@
+name: Clone Previous Task and Merge Template
+
+# Trigger on every push
+on:
+  push:
+    branches:
+      - main # or the appropriate branch
+
+jobs:
+  clone-previous-task:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the current (Task 3) repository
+      - name: Checkout Task 3 repository
+        uses: actions/checkout@v2
+
+      # Step 2: Clone the student's Task 2 repository
+      - name: Clone Task 2 repository
+        run: |
+         git clone https://github.com/web3Edtech/Frontend_React_Task2-{{ github.actor }}.git task2
+          cp -r task2/profile-website/src/components/* profile-website/src/components/
+
+      # Step 3: Add additional files from the Task 3 template
+      - name: Add Task 3 template files
+        run: |
+          cp -r .github/templates/task3/src/contexts profile-website/src/
+          cp -r .github/templates/task3/src/hooks profile-website/src/
+
+      # Step 4: Commit and push changes to Task 3 repository
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Merged Task 2 code and added Task 3 template files"
+          git push origin main
