@@ -25,12 +25,6 @@ jobs:
           git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Web3onwardsEdtech/react-task-2-tester-advanced-react-rendering-techniques-${{ github.actor }}.git task2
           cp -r task2/profile-website/src/components/* profile-website/src/components/
 
-      # Step 4: Add additional files from Task 3 template
-      - name: Add Task 3 template files
-        run: |
-          cp -r .github/templates/task3/src/contexts profile-website/src/
-          cp -r .github/templates/task3/src/hooks profile-website/src/
-
       # Step 5: Commit and push changes
       - name: Commit and push changes
         run: |
