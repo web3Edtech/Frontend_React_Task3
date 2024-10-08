@@ -25,9 +25,14 @@ jobs:
           git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Web3onwardsEdtech/react-task-2-tester-advanced-react-rendering-techniques-${{ github.actor }}.git task2
           cp -r task2/profile-website/src/components/* profile-website/src/components/
 
+      - name: Check GITHUB_TOKEN permissions
+        run: |
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/Web3onwardsEdtech/react-task-3-testerror-mastering-react-hooks-${{ github.actor }}
+
+
       # Step 5: Commit and push changes
       - name: Commit and push changes
         run: |
           git add .
           git commit -m "Merged Task 2 code and added Task 3 template files"
-          git push https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Web3onwardsEdtech/react-task-3-testerre6r-mastering-react-hooks-${{ github.actor }}.git
+          git push main
