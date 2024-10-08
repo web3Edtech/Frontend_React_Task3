@@ -27,7 +27,7 @@ jobs:
 
       - name: Check GITHUB_TOKEN permissions
         run: |
-         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/Web3onwardsEdtech/react-task-3-testerror-mastering-react-hooks-${{ github.actor }}
+         curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/Web3onwardsEdtech/react-task-3-testerre6r-mastering-react-hooks-${{ github.actor }}
 
 
       # Step 5: Commit and push changes
